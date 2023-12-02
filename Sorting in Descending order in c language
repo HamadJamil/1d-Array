@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+#define SIZE 10         //Global Variable For Subscript of Array
+
+    void input_Array(int size, int brr[]);          //Prototyping Input Function
+    void sorting(int size, int crr[]);                  //Prototyping Soring Function
+    int main(){
+
+        int arr[SIZE];
+
+        //Calling Input Function
+        input_Array(SIZE, arr);
+
+        //Calling Sorting Function
+        sorting(SIZE, arr);
+
+         //Printing new Line for Better Formatting
+        printf("\n");
+
+        //Printing The Sorted Array
+        for(int i = 0 ; i < SIZE ; i++){
+            printf("%d ",arr[i]);
+        }
+        //Printing new Line for Better Formatting
+        printf("\n");
+    return 0;}
+
+    //FUNCTIONS
+    //Declaring & Defining Input Function
+    void input_Array(int size, int brr[]){
+            printf("Enter The Elements Of Array\n");
+            for(int i = 0 ; i < size ; i++){
+            scanf("%d",&brr[i]);
+            }
+        }
+    //Declaring & Defining Sorting Function
+    void sorting(int size, int crr[]){
+            int pass ;
+            int i , j = 0;
+            int hold;
+            for( pass = size-1, j = 0 ; pass >= 0 ; pass--,j++){
+                for( i = size-1 ; i > j ; i--){
+                    if(crr[i] > crr[i-1]){
+                        hold = crr[i];
+                        crr[i] = crr[i-1];
+                        crr[i-1] = hold;
+                    }
+                }
+            }
+        }
+
